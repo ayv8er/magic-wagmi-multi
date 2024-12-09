@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
-import { sepoliaConfig, baseConfig } from "./configs";
+import { sepoliaConfig } from "./configs";
 import Dashboard from "./components/Dashboard";
 
 const queryClient = new QueryClient();
@@ -14,8 +14,6 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Dashboard 
           setCurrentConfig={setCurrentConfig}
-          sepoliaConfig={sepoliaConfig}
-          baseConfig={baseConfig}
         />
       </QueryClientProvider>
     </WagmiProvider>
