@@ -2,7 +2,7 @@ import { useAccount } from "wagmi";
 import SignIn from "./SignIn";
 import Wallet from "./Wallet";
 
-const Dashboard = () => {
+const Dashboard = ({ setCurrentConfig }) => {
   const { isConnected } = useAccount();
 
   return (
@@ -10,7 +10,7 @@ const Dashboard = () => {
       <h1>
         Magic <span className="normal-weight">+</span> Wagmi
       </h1>
-      {!isConnected ? <SignIn /> : <Wallet />}
+      {!isConnected ? <SignIn /> : <Wallet setCurrentConfig={setCurrentConfig} />}
     </div>
   );
 };
